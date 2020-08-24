@@ -23,5 +23,9 @@ FROM alpine
 WORKDIR /app/
 COPY --from=0 /tmp/main ./main
 
+# Create user
+RUN adduser -S -D -H -h /app/ madeline
+USER madeline
+
 # Startup command
 CMD ["./main"]
