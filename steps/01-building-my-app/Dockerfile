@@ -1,6 +1,6 @@
 FROM ubuntu
 
-# Select best package mirror
+# Select a better package mirror
 RUN sed -i 's/archive\.ubuntu\.com/mirrors\.digitalocean\.com/g' /etc/apt/sources.list
 
 # Install OS packages
