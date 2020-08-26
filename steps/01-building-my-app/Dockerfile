@@ -6,7 +6,7 @@ RUN sed -i 's/archive\.ubuntu\.com/mirrors\.digitalocean\.com/g' /etc/apt/source
 # Install OS packages
 RUN apt-get update
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y golang
-RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y git
+RUN apt-get install -y git
 
 # Copy source code to the container image
 WORKDIR /app
