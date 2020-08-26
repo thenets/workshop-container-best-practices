@@ -1,7 +1,7 @@
 ##
 # Builder
 ##
-FROM golang:1.15
+FROM golang:1.15 AS builder
 
 # Copy source code to the container image
 WORKDIR $GOPATH/src/github.com/thenets/workshop-container-best-practices
@@ -21,7 +21,7 @@ FROM alpine
 
 # Copy builded app
 WORKDIR /app/
-COPY --from=0 /tmp/main ./main
+COPY --from=builder /tmp/main ./main
 
 # Startup command
 CMD ["./main"]

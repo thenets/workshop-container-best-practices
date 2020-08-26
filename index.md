@@ -152,10 +152,6 @@ Agora aproveite uma torta de morango.
 
 > R: Sim. Para isso serve a imagem `scratch`. É a partir dela que imagens como `debian` e `busybox` são construídas. Desde a versão 1.5.0 do Docker, utilizar o `scratch` no `FROM` não cria uma layer extra.
 
-- É possível usar o sistemd?
-
-> Sim, mas não deveria. Containers deveriam 
-
 - Eu posso colocar várias aplicações no mesmo container?
 
 > R: Sim, mas não deveria. Todo o ecossistema da [Cloud Native Computing Foundation](https://www.cncf.io/) foi criado para trabalhar com o máximo de eficiência e isolamento.
@@ -170,4 +166,4 @@ Agora aproveite uma torta de morango.
 
 - Eu posso colocar testes dentro de um Dockerfile?
 
-> R: Sim, mas não deveria. A utilização do Dockerfile deve ser para exclusivamente instalar todas as dependências e construir uma aplicação. Rotinas de testes devem ser feitas após as imagens serem construídas. Dessa maneira é possível segregar ambientes, um dedicado para construção de aplicações e outro para testar as aplicações.
+> R: Sim, se eles forem muito simples de ser executado e tiverem seus backends *mockeds*. Testes mais complexos não deveriam ser feitos. A utilização do Dockerfile deve ser para instalar todas as dependências e construir uma aplicação. Rotinas de testes mais robustas, como integração e load, além de testes de unidade robustos, devem ser feitos após as imagens serem construídas. Dessa maneira é possível segregar ambientes, um dedicado para construção de aplicações e outro para testar as aplicações.
